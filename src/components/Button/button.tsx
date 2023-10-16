@@ -15,6 +15,8 @@ interface BaseButtonProps {
     children?: React.ReactNode
     /**点击跳转的地址，指定此属性 button 的行为和 a 链接一致 */
     href?: string
+    /**设置按钮背景色 */
+    backgroundColor?: string
 }
 
 export type ButtonProps = Partial<BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>>
@@ -43,7 +45,7 @@ export type ButtonProps = Partial<BaseButtonProps & React.ButtonHTMLAttributes<H
  */
 
 export const Button = (props: ButtonProps) => {
-    const { btnType, className, disabled, size, children, href, ...restProps } = props
+    const { btnType, className, disabled, size, children, backgroundColor, href, ...restProps } = props
     // btn, btn-lg, btn-primary
     const classes = classNames('codaButton', className, {
         [`codaButton--${btnType}`]: btnType,
@@ -65,6 +67,7 @@ export const Button = (props: ButtonProps) => {
             <button
                 className={classes}
                 disabled={disabled}
+                style={{ backgroundColor }}
                 {...restProps}
             >
                 {children}
