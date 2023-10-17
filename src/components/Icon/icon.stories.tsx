@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Icon } from './icon';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { far, faBell } from '@fortawesome/free-regular-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import './iconStory.scss'
-library.add(far, fas)
+library.add(fas)
 
 const meta = {
     title: '组件/通用/Icon 按钮',
@@ -22,9 +21,9 @@ export const DefaultIcon: Story = {
             <ul className="icons-list">
                 <li>
                     <span className="icon icon-step-backward">
-                        <Icon icon={faBell} theme={args.theme} />
+                        <Icon icon="check" theme={args.theme} />
                     </span>
-                    <span className="icon-class">bell</span>
+                    <span className="icon-class">check</span>
                 </li>
                 <li>
                     <span className="icon icon-step-backward">
@@ -81,16 +80,6 @@ export const CustomIcon: Story = {
 export const AllIcon: Story = {
     render: (args) => (
         <>
-            <ul className="icons-list">
-                {Object.entries(far).map(([key, value]) => (
-                    <li key={key}>
-                        <span className="icon icon-step-backward">
-                            <Icon icon={value} theme="primary" />
-                        </span>
-                        <span className="icon-class">{key.slice(2)}</span>
-                    </li>
-                ))}
-            </ul>
             <ul className="icons-list">
                 {Object.entries(fas).map(([key, value]) => (
                     <li key={key}>
