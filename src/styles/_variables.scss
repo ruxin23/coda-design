@@ -261,3 +261,8 @@ $input-group-addon-color: $input-color !default;
 $input-group-addon-bg: $gray-200 !default;
 $input-group-addon-white: $white;
 $input-group-addon-border-color: $input-border-color !default;
+
+// number_input
+$number-input-width: 6rem !default;
+$number-input-width-lg: $number-input-width * 1.25 !default;
+$number-input-width-sm: $number-input-width * 0.875 !default;

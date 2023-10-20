@@ -6,7 +6,7 @@ import './input.scss'
 export type InputSize = 'lg' | 'sm' | 'md'
 
 export interface InputProps
-    extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
+    extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
     /**是否禁用 Input */
     disabled?: boolean
     /**设置 input 大小，支持 lg、sm、md */
